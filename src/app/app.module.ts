@@ -12,12 +12,14 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SearchComponent } from './components/search/search.component';
 import { RepositoryComponent } from './components/repository/repository.component';
+import { AboutComponent } from './components/about/about.component';
 
 
 const appRoute:Routes = [
 
   {path:'',component:SearchComponent},
-  {path:'repository/:id',component:RepositoryComponent}
+  {path:'repository/:id',component:RepositoryComponent},
+  {path:'about',component:AboutComponent},
 
 ]
 
@@ -27,7 +29,8 @@ const appRoute:Routes = [
     KeysPipe,
     NavbarComponent,
     SearchComponent,
-    RepositoryComponent
+    RepositoryComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

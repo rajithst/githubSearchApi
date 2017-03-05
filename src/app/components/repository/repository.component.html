@@ -89,16 +89,13 @@
 
         <div class="list-group" *ngIf="code">
 
-          <a href="#" class="list-group-item" *ngFor="let coderes of code">
+          <a *ngFor="let coderes of code" href="{{coderes.html_url}}" class="list-group-item" >
 
             <div class="media">
-              <span class="label label-danger pull-right">3 Pendentes</span>
-              <div class="pull-left">
-                <img class="media-object" src="http://placehold.it/100x70" alt="Image">
-              </div>
+              <span class="label label-info pull-right">sha: {{coderes.sha}}</span>
               <div class="media-body">
-                <h4 class="media-heading">Ana Maria Braga</h4>
-                <p>Página Ativa</p>
+                <h4 class="media-heading">{{coderes.name}}</h4>
+                <p>{{coderes.path}}</p>
               </div>
 
             </div>

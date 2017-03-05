@@ -1,9 +1,24 @@
 <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8"><h3 style="text-align: center;">This Application allows you  to search through Github repositories all over the world </h3></div>
+    <div class="col-md-2"></div>
+  </div>
+
+<div class="row">
+  <div class="col-md-3"><img src="https://node-os.com/images/nodejs.png" alt=""  class="langimage"></div>
+  <div class="col-md-3"><img src="https://scottbcovert.github.io/angularjs-meets-salesforce1/img/AngularJS.png" alt=""  class="langimage"></div>
+  <div class="col-md-3"><img src="https://www.python.org/static/opengraph-icon-200x200.png" alt=""  class="langimage"></div>
+  <div class="col-md-3"><img src="http://www.unixstickers.com/image/cache/data/stickers/binbash/Bash-new.sh-600x600.png" alt=""  class="langimage"></div>
+
+
+</div>
+
+<div class="row">
   <form class="form-horizontal" (submit)="searchResult()">
     <fieldset>
-  <div class="col-md-6">
+  <div class="col-md-4">
     <div class="form-group">
-      <label for="select" class="col-lg-2 control-label" >Select Language</label>
+      <label for="select" class="col-lg-2 control-label" > Language</label>
       <div class="col-lg-10">
         <select class="form-control" id="select" [(ngModel)]="selection" name="selection">
           <option value="JavaScript"> <img [src]="js" alt="">JavaScript</option>
@@ -40,7 +55,7 @@
       </div>
     </div>
   </div>
-      <div class="col-md-6">
+      <div class="col-md-8">
         <div class="form-group">
           <div class="col-lg-10">
             <input type="text" class="form-control" [(ngModel)]="searchkey" name="searchkey"  (keyup)="searchResult()" placeholder="search in Github..........">
