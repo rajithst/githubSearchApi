@@ -8,7 +8,7 @@ https://githubapiapp.firebaseapp.com/
 # for development server
 
 clone repository 
-git clone https://github.com/rajithst/githubSearchApi.git
+`git clone https://github.com/rajithst/githubSearchApi.git`
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 
