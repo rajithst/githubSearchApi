@@ -9,6 +9,9 @@ import { Router } from '@angular/router';
 })
 export class SearchComponent implements OnInit {
 
+  private js = require('./img/javascript.png');
+
+
   data:Object;
   selection:String;
   searchkey:String;

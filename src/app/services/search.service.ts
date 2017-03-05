@@ -63,6 +63,14 @@ export class SearchService {
 
   }
 
+  searchCode(data1,data2){
+
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    headers.append('Content-Type','application/vnd.github.v3.text-match+json');
+    return this.http.get('https://api.github.com/search/code?q='+data1+'+repo:'+data2).map(res=>res.json());
+  }
+
 }
 
 

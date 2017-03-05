@@ -23,6 +23,11 @@ export class RepositoryComponent implements OnInit {
   downloads:Object;
   events:Object;
   name:string;
+  searchcodekey:string;
+  key:string;
+  code:Object;
+
+
 
   constructor(
     private route:Router,
@@ -43,7 +48,7 @@ export class RepositoryComponent implements OnInit {
     this.activatedRoute.params.map(params=>params['id']).subscribe((id)=> {
       this.searchService.getRepo(id).subscribe(repos => {
         this.repos = repos;
-        console.log(this.repos)
+        //console.log(this.repos)
       })
     })
 
@@ -80,6 +85,19 @@ export class RepositoryComponent implements OnInit {
 
 
   }
+
+  searchcodeResult(reponame){
+
+    this.searchService.searchCode(this.searchcodekey,reponame).subscribe(repos => {
+      this.code = repos.items;
+      console.log(this.code)
+    })
+
+
+
+  }
+
+
 
 }
 

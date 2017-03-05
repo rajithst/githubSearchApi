@@ -83,7 +83,28 @@
       </ul>
       <div class="col-md-12">
         <div class="form-group">
-            <input type="text" class="form-control" [(ngModel)]="searchkey" name="searchkey"  (keyup)="searchResult()" placeholder="search in {{repos.name}}..........">
+            <input type="text" class="form-control" [(ngModel)]="searchcodekey" name="searchcodekey"  (keyup)="searchcodeResult(repos.full_name)" placeholder="search in {{repos.name}}..........">
+        </div>
+
+
+        <div class="list-group" *ngIf="code">
+
+          <a href="#" class="list-group-item" *ngFor="let coderes of code">
+
+            <div class="media">
+              <span class="label label-danger pull-right">3 Pendentes</span>
+              <div class="pull-left">
+                <img class="media-object" src="http://placehold.it/100x70" alt="Image">
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Ana Maria Braga</h4>
+                <p>Página Ativa</p>
+              </div>
+
+            </div>
+
+          </a>
+
         </div>
 
       </div>
