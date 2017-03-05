@@ -1,0 +1,97 @@
+<div class="row">
+  <div class="col-md-8">
+    <div class="card" *ngIf="repos">
+  <div class="container-fliud">
+    <div class="wrapper row">
+      <div class="preview col-md-4">
+
+        <div class="preview-pic tab-content">
+          <div class="tab-pane active" id="pic-1"><img src="{{repos.owner.avatar_url}}" /></div>
+        </div>
+
+      </div>
+      <div class="details col-md-8">
+        <a href="{{repos.html_url}}"><h3 class="product-title">{{repos.name}}</h3></a>
+        <div class="rating">
+          {{repos.full_name}}
+        </div>
+        <h3 class="product-description">{{repos.description}}</h3>
+        <h5 class="price">Default Branch: <span>{{repos.default_branch}}</span></h5>
+        <h5 class="price">Downloads: <span *ngIf="repos.has_downloads == true">true</span><span *ngIf="repos.has_downloads == false">false</span></h5>
+        <h5 class="price">Issues: <span *ngIf="repos.has_issues == true">true</span><span *ngIf="repos.has_issues == false">false</span></h5>
+        <h5 class="price">Wiki: <span *ngIf="repos.has_wiki == true">true</span><span *ngIf="repos.has_wiki == false">false</span></h5>
+        <div class="row">
+
+          <div class="col-md-4">
+            <h5>Forks</h5>
+            <img [src]="fork" alt="" class="forkimage">
+            &nbsp; {{repos.forks}}
+          </div>
+
+          <div class="col-md-4">
+            <h5>Watchers</h5>
+            <img [src]="eye" alt="" class="forkimage">
+            &nbsp; {{repos.watchers}}
+          </div>
+
+
+          <div class="col-md-4">
+            <h5>Network</h5>
+            <img [src]="network" alt="" class="forkimage">
+             &nbsp; {{repos.network_count}}
+          </div>
+        </div>
+        <br>
+        <h5 class="price">Home Page: <a href="{{repos.homepage}}">{{repos.homepage}}</a></h5>
+        <h5 class="price">Git Repo: <a href="{{repos.html_url}}">{{repos.html_url}}</a></h5>
+
+        <br>
+        <div class="row">
+        <div class="col-md-12" *ngIf="langs">
+          <h5 class="price">Languages</h5>
+          <button *ngFor="let key of langs| keys" class="btn btn-success">{{key.key}}</button>
+        </div>
+        </div>
+        <div class="row" *ngIf="conts">
+        <div class="col-md-12" >
+          <h5 class="price">Top Contributors</h5>
+          <div *ngFor="let pics of conts; let i=index" class="col-md-3">
+            <a href="{{pics.html_url}}"><img  *ngIf="i<10" src="{{pics.avatar_url}}" class="img-rounded contributors" alt="Cinque Terre" width="304" height="236"></a>
+            <span *ngIf="i<10">{{pics.contributions}}</span>
+          </div>
+
+
+        </div>
+        </div>
+        <div class="btn btn-info" (click)="loadMore(repos.full_name)">Load more......</div>
+
+
+
+      </div>
+    </div>
+  </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card" *ngIf="repos">
+
+      <h3>Considerations for code search</h3>
+      <ul>
+        <li>Only the default branch is considered. In most cases, this will be the master branch.</li>
+        <li>You must always include at least one search term when searching source code</li>
+        <li>Only files smaller than 384 KB are searchable.</li>
+      </ul>
+      <div class="col-md-12">
+        <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="searchkey" name="searchkey"  (keyup)="searchResult()" placeholder="search in {{repos.name}}..........">
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+</div>

@@ -31,8 +31,9 @@ export class SearchComponent implements OnInit {
       repo:this.searchkey
     };
 
-   this.searchService.sendRequese(this.selection,this.searchkey).subscribe(response=>{
-      console.log(response)
+   this.searchService.sendRequese(this.searchkey,this.selection).subscribe(response=>{
+      this.data = response.items;
+      console.log(this.data)
     })
 
 

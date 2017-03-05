@@ -16,6 +16,53 @@ export class SearchService {
 
   }
 
+  getRepo(id:string){
+
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.get('https://api.github.com/repositories/'+id).map(res=>res.json());
+  }
+
+  getLangs(name:String){
+
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.get('https://api.github.com/repos/'+ name+'/languages').map(res=>res.json());
+
+  }
+
+  getContributors(name:String){
+
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.get('https://api.github.com/repos/'+ name+'/contributors').map(res=>res.json());
+
+  }
+
+  getDownloads(name:String){
+
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.get('https://api.github.com/repos/'+ name+'/downloads').map(res=>res.json());
+
+  }
+
+  getDeployments(name:String){
+
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.get('https://api.github.com/repos/'+ name+'/deployments').map(res=>res.json());
+
+  }
+
+  getEvents(name:String){
+
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.get('https://api.github.com/repos/'+ name+'/events').map(res=>res.json());
+
+  }
+
 }
 
 
